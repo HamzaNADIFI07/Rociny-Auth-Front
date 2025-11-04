@@ -1,37 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'auth/data/auth.dart';
+import 'auth/logic/login_cubit.dart';
+import 'app.dart';
+import 'api.dart';
 
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Mon Application Flutter',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Page d\'accueil'),
-      ),
-      body: const Center(
-        child: Text('Bienvenue dans ton premier commit Flutter !'),
-      ),
-    );
-  }
+  final api = Api(baseUrl: 'https://rociny-auth-back.onrender.com/');
+  final repo = AuthRepository(api);
+  runApp(
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => LoginCubit(repo)),
+      ],
+      child: const RocinyApp(),
+    ),
+  );
 }

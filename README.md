@@ -8,7 +8,7 @@ Elle inclut la structure Flutter initiale, la configuration du projet et les ins
 
 1. Cloner le projet
 ```bash
-git clone https://github.com/HamzaNADIFI07/rociny-app-front
+git clone https://github.com/HamzaNADIFI07/Rociny-Auth-Front.git
 cd rociny-app-front
 ```
 

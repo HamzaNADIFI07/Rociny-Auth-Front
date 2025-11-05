@@ -4,6 +4,16 @@ Rociny App Front est la base du projet mobile Flutter de Rociny.
 Cette première version constitue le socle du frontend mobile de l’application de la page d'authentification.
 Elle inclut la structure Flutter initiale, la configuration du projet et les instructions pour le lancer sur simulateur iOS.
 
+### Fonctionnalités principales
+
+- Écran complet de connexion avec `email` et `mot de passe`
+
+- Gestion d’état via BLoC `Cubit` pour séparer l’UI de la logique
+
+- Appel API vers le backend avec gestion du JWT
+
+- Architecture claire : UI → Cubit → Repository → API → Backend
+
 ### Installation et Configuration
 
 1. Cloner le projet
@@ -54,6 +64,37 @@ flutter devices
 ```bash
 flutter run -d "iPhone 15 Pro"
 ```
+5. Test de la fonctionnalité de connexion
+Pour tester la connexion réelle avec le backend, il faut d’abord réveiller le serveur hébergé (Render met en veille le serveur) :
+
+    1. Ouvrir le lien du backend dans le navigateur :
+        ```
+        https://rociny-auth-back.onrender.com/auth
+        ```
+    2. Attendre quelques secondes que le serveur se lance.
+
+    3. Une fois la page ouverte, relancer l'application Flutter et effectue la connexion depuis l'écran de login.
+
+### Structure du projet
+
+```bash
+lib/
+├── components/
+│   └── button.dart           # Bouton principal réutilisable
+├── logic/
+│   ├── login_cubit.dart      # Gestion de l'état de connexion
+│   └── login_state.dart      # Définition des états de la page de connexion
+├── ui/
+│   └── login_page.dart       # Page de connexion
+├── data/
+│   └── data.auth.dart        # Gestion des modèles et méthodes liées à l'authentification
+├── main.dart                 # Point d'entrée, initialisation des Cubits et du backend
+├── app.dart                  # Racine de l'application (MaterialApp + thème)
+└── api.dart                  # Configuration des appels API (baseUrl, endpoints, headers)
+
+```
+
+
 ### Convention de nommage des commits
 Ce projet suit la convention Conventional Commits.
 

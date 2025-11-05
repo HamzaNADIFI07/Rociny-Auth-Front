@@ -1,4 +1,4 @@
-# Rociny Auth Back — Initial Setup
+# Rociny Auth Front
 
 Rociny App Front est la base du projet mobile Flutter de Rociny.
 Cette première version constitue le socle du frontend mobile de l’application de la page d'authentification.

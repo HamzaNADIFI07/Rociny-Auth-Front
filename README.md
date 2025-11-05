@@ -19,7 +19,7 @@ Elle inclut la structure Flutter initiale, la configuration du projet et les ins
 1. Cloner le projet
 ```bash
 git clone https://github.com/HamzaNADIFI07/Rociny-Auth-Front.git
-cd rociny-app-front
+cd Rociny-Auth-Front
 ```
 
 2. Installer Flutter (si ce n’est pas déjà fait)
@@ -73,7 +73,16 @@ Pour tester la connexion réelle avec le backend, il faut d’abord réveiller l
         ```
     2. Attendre quelques secondes que le serveur se lance.
 
-    3. Une fois la page ouverte, relancer l'application Flutter et effectue la connexion depuis l'écran de login.
+    3. Une fois la page ouverte, relancer l'application Flutter et effectue la connexion depuis l'écran de login avec les identifiants suivants:
+        - E-mail:
+        ```
+        user1@rociny.com
+        ```
+        - Mot de passe:
+        ```
+        mdp123
+        ```
+
 
 ### Structure du projet
 
